@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head><title>Parva test</title></head>
+<script type='text/javascript' src='../lib/parva.js'></script>
+<body>
+
+<div id="div-with-id">Hello div with ID</div>
+<div class="div-with-class">Hello div with class</div>
+<span id="span-id" class="span-class">Span with id and class</span>
+<p>Paragraph tag</p>
+<p>Paragraph tag 2</p>
+
+<script type="text/javascript">
+function assert(condition, message) {
+  if(!condition) {
+    console.log("Assertion failed: "+message);
+  } else {
+    console.log("Passed");
+  }
+}
+
+assert($('p').length === 2, "Expected 2 p elements.");
+assert($('#div-with-id').html() === "Hello div with ID", "Expected different string");
+
+</script>
+
+</body>
+</html>
